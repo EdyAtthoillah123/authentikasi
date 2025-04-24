@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.txt-primary {
+    color: #fff;
+}
+
+.txt-secondary {
+    color: #121212;
+}
+
+.fira-sans-thin {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.fira-sans-thin-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.fira-sans-extralight {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.fira-sans-extralight-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.fira-sans-light {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.fira-sans-light-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.fira-sans-regular {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fira-sans-regular-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fira-sans-medium {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.fira-sans-medium-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.fira-sans-semibold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.fira-sans-semibold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.fira-sans-bold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.fira-sans-bold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.fira-sans-extrabold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.fira-sans-extrabold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.fira-sans-black {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.fira-sans-black-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+.p {
+    font-size: 16;
+}
+
+.start-project-button {
+    position: relative;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+}
+
+.start-project-button span {
+    position: relative;
+    z-index: 2;
+}
+
+.start-project-button::before {
+    content: '';
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    color: wheat;
+    background: #ffffff;
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s, background-color 0.5s;
+}
+.start-project-button:hover {
+    background-color: #ffffff;
+    color: #121212; /* Mengubah warna teks menjadi putih saat di-hover */
+    border-color: #121212;
+}
+
+.start-project-button:hover span {
+    color: #ffffff; /* Mengubah warna teks di dalam span menjadi putih saat di-hover */
+}
+
+
+
+
+.button-about {
+    position: relative;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: transparent;
+    color: #121212;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    border: 2px solid #121212;
+    border-radius: 10px;
+    transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+}
+
+.button-about span {
+    position: relative;
+    z-index: 1;
+}
+
+.button-about::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #121212;
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s, background-color 0.5s;
+}
+
+.button-about:hover {
+    background-color: #121212;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.button-about:hover span {
+    color: #ffffff;
+}
+
+.button-about:hover::before {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    background: #121212;
+}
+
+/* Service Software */
+.custom-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #333333;
+}
+
+@media (max-width: 768px) {
+    .card-service {
+        margin: 25px;
+    }
+}
+
+nav{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #004274;
+    position: relative;
+    height: 70px;
+}
+
+.logo{
+    color: #fff;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu-icon i{
+    color: #fff;
+    font-size: 30px;
+}
+
+@media (max-width:1000px) {
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #121212;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 20px;
+        padding-top: 0;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
+}
+
+.navbar-toggler-icon svg {
+    width: 28px; /* Ubah ukuran sesuai kebutuhan */
+    height: 28px; /* Ubah ukuran sesuai kebutuhan */
+    color: white;
+}
+
+#hero.jumbotron{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 150px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+#about{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 150px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+#testimoni{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 150px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+#service{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 150px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+#portofolio{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 150px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+#katalog{
+    margin: 0 auto; /* Untuk memastikan elemen tersebut berada di tengah */
+    padding-top: 47px; /* Sesuaikan dengan jarak atas yang Anda inginkan */
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+#search {
+    width: 300px;
+    height: 30px;
+    padding: 5px 10px 5px 35px;
+    font-size: 16px;
+    border-radius: 15px; /* Mengatur sudut melengkung untuk input text */
+}
+
+#searchButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchButton img {
+    width: 100%; /* Sesuaikan ukuran ikon dengan tombol */
+    height: 100%; /* Sesuaikan ukuran ikon dengan tombol */
+    object-fit: contain;
+}
+
+
+.form-select {
+    background-color: #fff; /* Latar belakang putih */
+    border: 1px solid #000; /* Border hitam */
+    border-radius: 15px; /* Sudut melengkung */
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 166px; /* Lebar yang lebih besar */
+    height: 50px; /* Tinggi yang lebih besar */
+}
+
+.form-select:focus {
+    box-shadow: none; /* Menghapus box-shadow saat focus */
+}
+
+.form-select::placeholder {
+    color: #999;
+
+}
+
+.form-select option {
+    padding: 5px 10px;
+}
+
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUp 1s forwards;
+}
+
+.animated-text-2 {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUp 1.4s forwards;
+}
+
+.animated-text-3 {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUp 1.8s forwards;
+}
+
+.animated-text-4 {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUp 2.2s forwards;
+}
+.animated-text-5 {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUp 2.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInUp 1s forwards;
+}
+
+.animated-text-2 {
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInUp 1.4s forwards;
+}
+
+.animated-text-3 {
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInUp 1.8s forwards;
+}
+
+.animated-text-4 {
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInUp 2.2s forwards;
+}
+
+.animated-text-5 {
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInUp 2.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.card-link:hover .card {
+    transform: scale(1.05);
+    /* Memperbesar card saat hover */
+    transition: transform 0.3s ease;
+    /* Efek transisi */
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.menu-container ul {
+    display: block;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .menu-container ul {
+        display: flex;
+        flex-direction: row; /* Change to row for horizontal layout */
+        justify-content: center; /* Center the items */
+        padding: 0;
+    }
+    
+    .menu-container ul li {
+        margin-bottom: 0; /* Remove bottom margin for horizontal layout */
+        margin-right: 12px; /* Add right margin for spacing between items */
+        list-style: none; /* Remove default list styling */
+    }
+    
+    .menu-container ul li:last-child {
+        margin-right: 0; /* Remove right margin from the last item */
+    }
+
+    /* Ensure links are aligned center within list items */
+    .menu-container ul li a {
+        display: block;
+        text-align: center;
+    }
+}
