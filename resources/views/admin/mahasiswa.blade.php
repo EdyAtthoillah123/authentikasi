@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistem Informasi | </title>
+    <title>SIAKAD | Page Mahasiwa</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -52,21 +52,21 @@
             "hideMethod": "fadeOut"
         }
     </script>
+    @if (Session::has('successlogin'))
+        <script>
+            toastr.success('Berhasil Login Sebagai Admin', '')
+        </script>
+    @endif
+    @if (Session::has('successloginuser'))
+        <script>
+            toastr.success('Berhasil Login Sebagai Mahasiswa', '')
+        </script>
+    @endif
     @if (Session::has('success'))
         <script>
             toastr.success('Data Berhasil Ditambahkan', '')
         </script>
     @endif
-    @if (Session::has('successlogin'))
-    <script>
-        toastr.success('Berhasil Login Sebagai Admin', '')
-    </script>
-@endif
-@if (Session::has('successloginuser'))
-<script>
-    toastr.success('Berhasil Login Sebagai Mahasiswa', '')
-</script>
-@endif
     @if (Session::has('successedit'))
         <script>
             toastr.success('Data Berhasil Diedit', '')
@@ -98,10 +98,10 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <img src="{{ asset('') }}" alt="Logo" width="25" height="25">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" width="25" height="25">
                 </div>
 
-                <div class="sidebar-brand-text mx-3">Admin</div>
+                <div class="sidebar-brand-text mx-3">SIAKAD</div>
             </a>
 
             <!-- Divider -->
@@ -111,7 +111,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-book"></i>
-                    <span>Katalog</span></a>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('mahasiswa') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Mahasiswa</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('golongan') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Golongan</span></a>
             </li>
 
             <!-- Divider -->
@@ -172,7 +182,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between">
                             <div class="mt-1">
-                                <h6 class="m-0 font-weight-bold text-secondary">Katalog Produk</h6>
+                                <h6 class="m-0 font-weight-bold text-secondary">Master Mahasiswa</h6>
                             </div>
                             <div>
                                 <button class="btn btn-sm" data-toggle="modal" data-target="#modalTambah"
@@ -191,32 +201,23 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Produk</th>
-                                            <th>Gambar</th>
-                                            <th>Deskripsi</th>
-                                            <th>Harga</th>
+                                            <th>Nim</th>
+                                            <th>Nama</th>
+                                            <th>Alamat</th>
+                                            <th>No Hp</th>
+                                            <th>Semester</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($data as $item)
+                                        @foreach ($data as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->name_product }}</td>
-                                                <td>
-                                                    @foreach ($item->productImages as $image)
-                                                        @php
-                                                            $imagePaths = explode('|', $image->image);
-                                                        @endphp
-                                                        @foreach ($imagePaths as $path)
-                                                            <img src="{{ asset('public/' . $path) }}" alt="Product Image"
-                                                                style="width: 50px; height: auto;">
-                                                        @endforeach
-                                                    @endforeach
-                                                </td>
-
-                                                <td>{{ $item->description }}</td>
-                                                <td>Rp. {{ number_format($item->price, 0, ',', '.') }}</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                                 <td>
                                                     <div class="btn-group ">
                                                         <button type="button" class="btn btn-outline-warning"
@@ -234,76 +235,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @endforeach --}}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3 d-flex justify-content-between">
-                            <div class="mt-1">
-                                <h6 class="m-0 font-weight-bold text-secondary">Katalog Produk</h6>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm" data-toggle="modal" data-target="#modalTambahPortofolio"
-                                    style="background-color: #121212; color: white"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
-                                    </svg>Tambah
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Kegiatan</th>
-                                            <th>Gambar</th>
-                                            <th>Deskripsi</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{-- @foreach ($portofolio as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->name}}</td>
-                                                <td>
-                                                    @foreach ($item->imagesPortofolio as $image)
-                                                        @php
-                                                            $imagePaths = explode('|', $image->image);
-                                                        @endphp
-                                                        @foreach ($imagePaths as $path)
-                                                            <img src="{{ asset('' . $path) }}"
-                                                                alt="Product Image"
-                                                                style="width: 50px; height: auto;">
-                                                        @endforeach
-                                                    @endforeach
-                                                </td>
-                                                <td>{{ $item->description }}</td>
-                                                <td>
-                                                    <div class="btn-group ">
-                                                        <button type="button" class="btn btn-outline-warning"
-                                                            data-toggle="modal"
-                                                            data-target="#modalEdit{{ $item->id }}">
-                                                            <span class="btn-label"><i
-                                                                    class="fas fa-pencil-alt"></i></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-outline-danger"
-                                                            data-toggle="modal"
-                                                            data-target="#modalHapus{{ $item->id }}">
-                                                            <span class="btn-label"><i
-                                                                    class="fas fa-trash-alt"></i></span>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach --}}
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -366,62 +298,73 @@
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                {{-- <form action="{{ route('katalog-store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('mahasiswa-store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Produk Baru</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Mahasiswa Baru</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="file" class="form-control-file" name="image[]" multiple
-                                id="sxampleInputFile">
-                        </div>
-                        <div class="form-group">
-                            <label for="name_product">Nama Produk</label>
-                            <input type="text" class="form-control" name="name_product" required>
-                            @error('name_product')
+                            <label for="NIM">NIM</label>
+                            <input type="text" class="form-control" name="NIM" required>
+                            @error('NIM')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
                         <div class="form-group">
-                            <label for="id_category">Kategori</label>
-                            <select class="form-control" name="id_category" id="id_category">
-                                <option value="" {{ old('id_category') === '' ? 'selected' : '' }}>Pilih</option>
-                                @foreach ($category as $value)
-                                    <option value="{{ $value->id }}"
-                                        {{ old('id_category') === $value->id ? 'selected' : '' }}>
-                                        {{ $value->name }}
-                                    </option>
+                            <label for="Nama">Nama</label>
+                            <input type="text" class="form-control" name="Nama" required>
+                            @error('Nama')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Alamat">Alamat</label>
+                            <textarea class="form-control" name="Alamat" rows="3" required></textarea>
+                            @error('Alamat')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Nohp">No HP</label>
+                            <input type="text" class="form-control" name="Nohp" required>
+                            @error('Nohp')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Semester">Semester</label>
+                            <input type="number" class="form-control" name="Semester" required>
+                            @error('Semester')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_Gol">Golongan</label>
+                            <select class="form-control" name="id_Gol" required>
+                                <option value="">-- Pilih Golongan --</option>
+                                @foreach ($golongan as $item)
+                                    <option value="{{ $item->id_Gol }}">Golongan {{ $item->nama_Gol }}</option>
                                 @endforeach
                             </select>
-                            @error('id_category')
+                            @error('id_Gol')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="description">Deskripsi</label>
-                            <textarea class="form-control" name="description" rows="3" required></textarea>
-                            @error('description')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
-                        <div class="form-group">
-                            <label for="price">Harga</label>
-                            <input type="number" class="form-control" id="price" name="price" required
-                                oninput="maxLengthCheck(this)">
-                            @error('price')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
-                </form> --}}
+                </form>
             </div>
         </div>
     </div>
@@ -586,24 +529,3 @@
 </body>
 
 </html>
-{{-- 
-
-
-
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
