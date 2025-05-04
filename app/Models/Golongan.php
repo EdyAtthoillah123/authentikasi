@@ -12,8 +12,13 @@ class Golongan extends Model
 
     protected $table = 'golongans';
 
+    protected $primaryKey = 'id_Gol';
+
+    public $incrementing = false;
+
     protected $fillable = [
-        'nama_Gol'
+        'id_Gol',
+        'nama_Gol',
     ];
 
     public $timestamps = true;
